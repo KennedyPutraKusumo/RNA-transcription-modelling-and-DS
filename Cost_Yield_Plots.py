@@ -113,7 +113,7 @@ fig.subplots_adjust(top=0.5)
 
 pl.rc('axes', linewidth=2) # setting the width of the figure border lines thicker (2)
 
-cmap =  plt.get_cmap("copper") # Create colourmap which is the reverse of the copper color map used in previous cell
+cmap = plt.get_cmap("copper") # Create colourmap which is the reverse of the copper color map used in previous cell
 norm = mpl.colors.Normalize(vmin= 0, vmax= 4.5)
 
 cb1 = mpl.colorbar.ColorbarBase(ax, cmap=cmap,

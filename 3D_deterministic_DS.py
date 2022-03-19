@@ -39,7 +39,7 @@ X_grid[:,3] = 0.0002 # Constant spermidine concentration
 N_total = 0
 for i in range(0, N_Mg):
     for j in range(0, N_NTP):
-        for k in range(0,N_T7RNAP):
+        for k in range(0, N_T7RNAP):
             X_grid[N_total, 1] = grid_Mg[i]
             X_grid[N_total, 2] = grid_NTP[j]
             X_grid[N_total, 4] = grid_T7RNAP[k]
@@ -47,24 +47,24 @@ for i in range(0, N_Mg):
 
 ## Ignore Runtime warnings about fsolve() convergence being slow, as initguess() etc. ignores 
 ## 'bad' solutions anyway
-warnings.filterwarnings("ignore", category= RuntimeWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 
 ### EITHER: Simulate and record simulation time
-# t0 = time.time()
-# y_designSpace = datafitting_transcription_experimental(X_grid, *new)
-# t1 = time.time()
-# print("Computation time for " + str(len(y_designSpace)) + " simulations: ", int((t1 - t0)/6)/10, " min")
-# np.savetxt('3d_DesSpace_new.csv', y_designSpace, delimiter=",") # Save simulation to avoid running time
+t0 = time.time()
+y_designSpace = datafitting_transcription_experimental(X_grid, *new)
+t1 = time.time()
+print("Computation time for " + str(len(y_designSpace)) + " simulations: ", int((t1 - t0)/6)/10, " min")
+np.savetxt('3d_DesSpace_new.csv', y_designSpace, delimiter=",") # Save simulation to avoid running time
 ###
 
 ### OR: Load previous simulation results
-y_designSpace = np.loadtxt('3d_DesSpace_new.csv', delimiter=",") # Load simulation to avoid running time
+# y_designSpace = np.loadtxt('3d_DesSpace_new.csv', delimiter=",") # Load simulation to avoid running time
 ###
 
-fig = plt.figure(figsize = (8, 6))
+fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
-pl.rc('axes', linewidth=2) # setting the width of the figure border lines thicker (2)
+pl.rc('axes', linewidth=2)  # setting the width of the figure border lines thicker (2)
 
 for z in range(len(y_designSpace)): # colour code with the higher the RNA yield, the greener
     # filter out solutions that don't meet design criteria or are unstable
@@ -128,5 +128,5 @@ cb1 = mpl.colorbar.ColorbarBase(ax, cmap=cmap,
 cb1.set_label('Effective RNA yield CQA [g/L]', fontsize = 15, fontweight = "bold", labelpad = 10)
 cb1.set_ticks(np.linspace(1.5, 6, 4))
 cb1.ax.tick_params(labelsize=15, width=2) 
-fig.show()
+plt.show()
 #fig.savefig('Colorbar_DesSp.svg', bbox_inches = 'tight')

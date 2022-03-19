@@ -39,9 +39,13 @@ warnings.filterwarnings("ignore", category= RuntimeWarning)
 
 ## Parameter estimation/ Curve fitting: 1st entry is funcction, 2nd is input, 3rd is y value to fit to
 ## p0 is initial guess, and bounds are parameter bounds (bounds could also be specified for each parameter individually)
-pexp, pcov__ = curve_fit(datafitting_transcription_experimental, X_new, C_RNA_new, \
-                          p0 = [13000*1e-7, 2e1, 100, 1e6, 1e6, 2, 0, 0, 0], \
-                          bounds = (0, 1e8))
+pexp, pcov__ = curve_fit(
+    datafitting_transcription_experimental,
+    X_new,
+    C_RNA_new,
+    p0=[13000*1e-7, 2e1, 100, 1e6, 1e6, 2, 0, 0, 0],
+    bounds=(0, 1e8),
+)
 
 print('Optimal parameters: ', pexp)
 
@@ -173,3 +177,5 @@ ax2.yaxis.set_tick_params(labelsize=18, width=2)
 ax2.legend(loc = 'upper left', fontsize = 16)
 ax2.set_ylabel('Predicted RNA yield CQA [g/L]', fontsize = 18, labelpad = 16)
 ax2.set_xlabel('Actual RNA yield CQA [g/L]', fontsize = 18, labelpad = 16);
+
+plt.show()

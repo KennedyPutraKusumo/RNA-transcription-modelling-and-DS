@@ -148,5 +148,5 @@ cb1 = mpl.colorbar.ColorbarBase(ax, cmap=cmap,
 cb1.set_label('Probability of achieving 1.5 g/L effective RNA yield CQA', fontsize = 14, fontweight = "bold", labelpad = 10)
 cb1.set_ticks(np.linspace(0, 1, 6))
 cb1.ax.tick_params(labelsize=16, width=2) 
-fig.show()
+plt.show()
 #fig.savefig('Colorbar_probDesSpace.svg', bbox_inches = 'tight')

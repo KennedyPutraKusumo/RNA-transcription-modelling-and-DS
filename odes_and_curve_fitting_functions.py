@@ -112,21 +112,21 @@ def tr(t, y, trans_constants, guess):
     tot_conc = (C_Mg_0, C_NTP_0, C_H_0, C_PPi_0, C_HEPES_0)
     
     # get free solution concentrations associated with first guess
-    free_sol_conc = fsolve(solution_proton, guess, args = tot_conc)
+    free_sol_conc = fsolve(solution_proton, guess, args=tot_conc)
     
     # Only update guess if the solution is non-negative, otherwise call function to find valid guess
     if (free_sol_conc >= 0).all():
-        guess = free_sol_conc # Only update guess if the solution makes physical sense
+        guess = free_sol_conc  # Only update guess if the solution makes physical sense
     else:
         guess = guess_tr(tot_conc, guess)
-        free_sol_conc = fsolve(solution_proton, guess, args = tot_conc) 
+        free_sol_conc = fsolve(solution_proton, guess, args=tot_conc)
     
     C_Mg, C_NTP, C_H, C_PPi, C_HEPES = free_sol_conc
 
     complex_conc = all_sol_conc(C_Mg, C_NTP, C_H, C_PPi) # get complex component concentrations
     C_HNTP, C_MgNTP, C_Mg2NTP, C_MgHNTP, C_MgPPi, C_Mg2PPi, C_HPPi, C_H2PPi, C_MgHPPi = complex_conc
     
-    V_tr = k_app*C_T7RNAP*alpha*C_Mg*C_MgNTP            / (K5*C_MgNTP**2*C_Mg +  K4*C_Mg**2 + K3*C_MgNTP**2                + K2*C_MgNTP + K1*alpha*C_Mg + 1) # Rate of transcription
+    V_tr = k_app*C_T7RNAP*alpha*C_Mg*C_MgNTP            / (K5*C_MgNTP**2*C_Mg + K4*C_Mg**2 + K3*C_MgNTP**2                + K2*C_MgNTP + K1*alpha*C_Mg + 1) # Rate of transcription
     # K3 to K5 are 'investigative' terms, whose influence was tested during previous parameter estimations
     # They are however not used in simulations
 
@@ -233,13 +233,16 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
             warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
             C_array[j] = -0.001
         elif np.isfinite(U1[-1]).all():
-            C_array[j] = U1[-1][0]*5e6 # RNA molecular weight
+            C_array[j] = U1[-1][0]*5e6  # RNA molecular weight
         else:
             warnings.warn("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
             C_array[j] = 1e4
     # Return N-dimensional RNA yield corresponding to X    
-    return C_array
-
+    # return C_array
+    full_array = np.array([
+        C_array,
+    ])
+    return full_array
 
 def datafitting_transcription_prob_stDev(X, stDev_per, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4, K5):
 ## Same function as datafitting_transcription_experimental() but with the additional input of a standartd deviation
@@ -300,7 +303,7 @@ def datafitting_transcription_prob_stDev(X, stDev_per, k_app, K1, K2, k_ac, k_ba
 
         t1 = np.linspace(0, t_array[j], N_step) # Set time grid for current simulation
         delta_t = t1[1]-t1[0] # Time step
-        U1 = np.zeros((N_step, len(U_0))) # Matrix storing concentrations at all intermediate time steps for given D-dimensional input
+        U1 = np.zeros((N_step, len(U_0)))   # Matrix storing concentrations at all intermediate time steps for given D-dimensional input
         U1[0] = U_0 # Initial conditions
         
         ## Runge-Kutta 4 solver to iterate over each time step
