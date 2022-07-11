@@ -131,7 +131,14 @@ def tr(t, y, trans_constants, guess):
     # They are however not used in simulations
 
     V_deg = (k_ac*C_H**n_ac + k_ba*(10**(-14)/(C_H))**n_ba + k_Mg*C_Mg**n_Mg)             * C_RNA**n_RNA # Rate of degradation
-    
+
+    # if degradation rate V_deg exceeds rate of RNA transcription V_tr
+    # AND
+    # if the decrease in RNA concentation causes RNA concentration to be negative
+    # adjust V_deg such that RNA is zero instead
+    if C_RNA + (V_tr - V_deg) * t < 0:
+        V_deg = V_tr + C_RNA / t  # obtained from rearranging C_RNA + (V_tr - V_deg) * t = 0
+
     # Rate of precipitation. Only for investigative purposes. In simulations, k_precip = 0
     C_Mg2PPi_equ = 0.014e-3
     V_precip = k_precip*max(0 , C_Mg2PPi - C_Mg2PPi_equ) # = 0 for the following simulations
@@ -143,9 +150,10 @@ def tr(t, y, trans_constants, guess):
     df3dt = (Nall-1)*V_tr # Change in total H
     df4dt = - k_d*C_T7RNAP # Change in T7RNAP ## k_d = 0
     df5dt = - 2 * V_precip # Change in total Mg
+    df6dt = V_deg
     
     # Return both differential expressions and updated guess
-    return np.array([df0dt, df1dt, df2dt, df3dt, df4dt, df5dt]), guess
+    return np.array([df0dt, df1dt, df2dt, df3dt, df4dt, df5dt, df6dt]), guess
 
 
 def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4, K5):
@@ -158,7 +166,7 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
 # trajectory (at same Mg, NTP and spermidine). Even for the same initial concentrations every time step along the 
 # same trajectory needs to be called separately
     
-    t_array = X[:,0] # size N: 1st column of X vector, the time of each of the N samples
+    t_array = X[:, 0]  # size N: 1st column of X vector, the time of each of the N samples
     N = len(t_array)
     
     # The following parameters were set to avoid overfitting or through a priori knowledge
@@ -181,7 +189,7 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
     K5 = 0
     k_precip = 0
     
-    C_array = np.zeros(N)
+    C_array = np.zeros((N, 7))
     
     for j in range(N):
 
@@ -207,10 +215,10 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
         guess = fsolve(solution_proton, guess, args = tot_conc0) # Set guess for future timesteps
         
         # Retrieve parameters used for kinetics
-        trans_cons = (k_app, K1, K2, alpha, Nall, k_d, k_ac, n_ac, k_ba, n_ba,                       k_Mg, n_Mg, n_RNA, K3, K4, K5, k_precip)
+        trans_cons = (k_app, K1, K2, alpha, Nall, k_d, k_ac, n_ac, k_ba, n_ba, k_Mg, n_Mg, n_RNA, K3, K4, K5, k_precip)
         
         N_step = 101 # 101 time steps for numerical integration was found to give OK stability
-        U_0 = [0, C_PPi_0, C_NTP_0, C_H_0, C_T7RNAP_0, C_Mg_0] # Set array of initial concentrations
+        U_0 = [0, C_PPi_0, C_NTP_0, C_H_0, C_T7RNAP_0, C_Mg_0, 0] # Set array of initial concentrations
 
         t1 = np.linspace(0, t_array[j], N_step) # Set time grid for current simulation
         delta_t = t1[1]-t1[0] # Time step
@@ -230,12 +238,15 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
             U1[n+1] = U1[n] + delta_t / 6.0 * (dy_1+ 2.0 * dy_2 + 2.0 * dy_3 + dy_4) 
         
         if (U1[-1]<0).any():
-            warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
+            # warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
+            print("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
             C_array[j] = -0.001
         elif np.isfinite(U1[-1]).all():
-            C_array[j] = U1[-1][0]*5e6  # RNA molecular weight
+            # C_array[j] = U1[-1][0]*5e6  # RNA molecular weight
+            C_array[j] = U1[-1]  # RNA molecular weight
         else:
-            warnings.warn("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
+            # warnings.warn("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
+            print("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
             C_array[j] = 1e4
     # Return N-dimensional RNA yield corresponding to X    
     # return C_array
