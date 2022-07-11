@@ -1,0 +1,45 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 2
+Number of candidates                    : 27
+Number of responses                     : 1
+Number of measured responses            : 1
+Number of time-invariant controls       : 3
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-04-07 22:26:35.083533
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 27
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate       3/27]: time elapsed            2.51 seconds.
+[Candidate       6/27]: time elapsed            5.24 seconds.
+[Candidate       9/27]: time elapsed            7.66 seconds.
+[Candidate      12/27]: time elapsed           10.10 seconds.
+[Candidate      15/27]: time elapsed           15.36 seconds.
+[Candidate      18/27]: time elapsed           17.84 seconds.
+[Candidate      21/27]: time elapsed           20.26 seconds.
+[Candidate      24/27]: time elapsed           22.75 seconds.
+[Candidate      27/27]: time elapsed           25.83 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+MOSEK error 1001: The license has expired.
+
+*** A FLEXlm error occurred. FLEXlm reported:
+
+Feature has expired.
+Feature:       PTS
+Expire date:   25-mar-2022
+License path:  C:\Users\kenne\mosek\mosek.lic;
+FlexNet Licensing error:-10,32
+
+*** end of FLEXlm report.
+

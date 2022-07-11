@@ -1,0 +1,17 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 9
+Number of candidates                    : 9261
+Number of responses                     : 7
+Number of measured responses            : 7
+Number of time-invariant controls       : 3
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-19 17:04:48.197254
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 9261

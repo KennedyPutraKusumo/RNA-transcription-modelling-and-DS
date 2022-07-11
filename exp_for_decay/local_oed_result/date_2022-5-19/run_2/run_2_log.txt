@@ -1,0 +1,150 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 5
+Number of candidates                    : 1331
+Number of responses                     : 1
+Number of measured responses            : 1
+Number of time-invariant controls       : 3
+Number of sampling time choices         : 9
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-19 17:56:44.637222
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : True
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 1331
+Number of Sampling Time Choices         : 9
+Sampling Times Optimized                : False
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate   134/1331]: time elapsed            4.70 seconds.
+[Candidate   268/1331]: time elapsed           12.02 seconds.
+[Candidate   402/1331]: time elapsed           21.76 seconds.
+[Candidate   536/1331]: time elapsed           33.99 seconds.
+[Candidate   670/1331]: time elapsed           48.63 seconds.
+[Candidate   804/1331]: time elapsed           65.61 seconds.
+[Candidate   938/1331]: time elapsed           85.03 seconds.
+[Candidate  1072/1331]: time elapsed          106.89 seconds.
+[Candidate  1206/1331]: time elapsed          131.36 seconds.
+[Candidate  1331/1331]: time elapsed          156.36 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 24189           
+  Cones                  : 5               
+  Scalar variables       : 12084           
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer started.
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 24189           
+  Cones                  : 5               
+  Scalar variables       : 12084           
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 6               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 141
+Optimizer  - Cones                  : 6
+Optimizer  - Scalar variables       : 1373              conic                  : 41              
+Optimizer  - Semi-definite variables: 2                 scalarized             : 70              
+Factor     - setup time             : 0.01              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 6586              after factor           : 6586            
+Factor     - dense dim.             : 0                 flops                  : 2.55e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   1.3e+00  1.3e+00  9.2e+00  0.00e+00   4.139191995e+00   -4.025510008e+00  1.0e+00  0.09  
+1   3.7e-01  3.7e-01  2.2e+00  2.69e-01   2.542819020e+00   -8.322828962e-01  2.9e-01  0.09  
+2   8.7e-02  8.7e-02  4.4e-01  2.27e-01   2.221829169e+00   1.135909462e+00   6.7e-02  0.09  
+3   3.0e-02  3.0e-02  1.5e-01  1.23e-01   2.604065669e+00   2.151266385e+00   2.3e-02  0.09  
+4   7.9e-03  7.9e-03  3.6e-02  1.14e-01   2.341898796e+00   2.316765091e+00   6.1e-03  0.09  
+5   2.4e-03  2.4e-03  9.6e-03  1.61e-01   2.917654351e+00   3.025581536e+00   1.9e-03  0.09  
+6   6.0e-04  6.0e-04  1.9e-03  2.50e-01   4.512472242e+00   4.631680987e+00   4.7e-04  0.11  
+7   2.7e-04  2.7e-04  9.0e-04  1.44e-01   6.072284132e+00   6.233399275e+00   2.1e-04  0.11  
+8   1.1e-04  1.1e-04  1.7e-04  1.01e+00   8.420909571e+00   8.447469039e+00   8.5e-05  0.11  
+9   7.7e-05  7.7e-05  1.1e-04  8.07e-01   9.299277498e+00   9.325900543e+00   5.9e-05  0.11  
+10  3.8e-05  3.8e-05  3.6e-05  1.29e+00   1.060373929e+01   1.061425828e+01   3.0e-05  0.11  
+11  1.6e-05  1.6e-05  1.0e-05  1.09e+00   1.134756881e+01   1.135256926e+01   1.2e-05  0.11  
+12  8.3e-06  8.3e-06  3.8e-06  1.10e+00   1.162568611e+01   1.162827931e+01   6.4e-06  0.11  
+13  4.8e-06  4.8e-06  1.7e-06  1.04e+00   1.169810933e+01   1.169967327e+01   3.7e-06  0.11  
+14  3.3e-06  3.3e-06  9.6e-07  1.04e+00   1.173936075e+01   1.174043739e+01   2.6e-06  0.11  
+15  4.8e-07  4.8e-07  5.5e-08  1.01e+00   1.179411757e+01   1.179428916e+01   3.7e-07  0.11  
+16  9.0e-08  9.0e-08  4.4e-09  1.01e+00   1.180445472e+01   1.180448598e+01   7.0e-08  0.13  
+17  4.0e-09  4.0e-09  4.2e-11  9.99e-01   1.180614330e+01   1.180614474e+01   3.1e-09  0.13  
+18  2.9e-09  7.0e-09  6.1e-13  1.00e+00   1.180622106e+01   1.180622114e+01   1.9e-10  0.13  
+19  2.9e-09  7.0e-09  6.1e-13  1.00e+00   1.180622106e+01   1.180622114e+01   1.9e-10  0.13  
+20  4.3e-10  6.4e-09  5.9e-13  1.00e+00   1.180622120e+01   1.180622128e+01   1.8e-10  0.14  
+Optimizer terminated. Time: 0.14    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: 1.1806221201e+01    nrm: 8e+00    Viol.  con: 1e-07    var: 0e+00    barvar: 0e+00    cones: 0e+00  
+  Dual.    obj: 1.1806221284e+01    nrm: 2e+03    Viol.  con: 0e+00    var: 2e-10    barvar: 7e-13    cones: 0e+00  
+---------------------------------[Optimization Complete in 45.83 s]---------------------------------
+Complete: 
+ ~ sensitivity analysis took 156.36 CPU seconds.
+ ~ optimization with MOSEK via cvxpy took 45.83 CPU seconds.
+####################################################################################################
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-05-19 18:00:06.903018
+Criterion                               : d_opt_criterion
+Criterion Value                         : -11.806221201062641
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : True
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 1331
+Number of Optimal Candidates            : 5
+Number of Sampling Time Choices         : 9
+Sampling Times Optimized                : False
+Information Matrix Regularized          : False
+Minimum Effort Threshold                : 0.0001
+-------------------------------------------[Candidate 11]-------------------------------------------
+                             Recommended Effort: 24.24% of experiments                              
+Time-invariant Controls:
+[0.e+00 1.e-03 3.e+00]
+Sampling Times:
+[0. 1. 2. 3. 4. 5. 6. 7. 8.]
+-------------------------------------------[Candidate 66]-------------------------------------------
+                             Recommended Effort: 25.55% of experiments                              
+Time-invariant Controls:
+[0.e+00 2.e-03 3.e+00]
+Sampling Times:
+[0. 1. 2. 3. 4. 5. 6. 7. 8.]
+------------------------------------------[Candidate 253]-------------------------------------------
+                             Recommended Effort: 17.93% of experiments                              
+Time-invariant Controls:
+[2.e-07 1.e-03 3.e+00]
+Sampling Times:
+[0. 1. 2. 3. 4. 5. 6. 7. 8.]
+------------------------------------------[Candidate 1100]------------------------------------------
+                             Recommended Effort: 26.11% of experiments                              
+Time-invariant Controls:
+[9.e-07 1.e-03 3.e+00]
+Sampling Times:
+[0. 1. 2. 3. 4. 5. 6. 7. 8.]
+------------------------------------------[Candidate 1221]------------------------------------------
+                              Recommended Effort: 6.17% of experiments                              
+Time-invariant Controls:
+[1.e-06 1.e-03 3.e+00]
+Sampling Times:
+[0. 1. 2. 3. 4. 5. 6. 7. 8.]
+####################################################################################################

@@ -1,0 +1,59 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 9
+Number of candidates                    : 9261
+Number of responses                     : 7
+Number of measured responses            : 7
+Number of time-invariant controls       : 3
+====================================================================================================
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate   927/9261]: time elapsed         3259.10 seconds.
+[Candidate  1854/9261]: time elapsed         6831.30 seconds.
+[Candidate  2781/9261]: time elapsed        10523.79 seconds.
+[Candidate  3708/9261]: time elapsed        14301.43 seconds.
+[Candidate  4635/9261]: time elapsed        18504.03 seconds.
+[Candidate  5562/9261]: time elapsed        23524.09 seconds.
+Warning: Negative final concentration for the following initial concentrations: (0.10099999999999999, 0.10799999999999998, 0.02217290126572699, 1e-18, 0.04)
+[Candidate  6489/9261]: time elapsed        28640.96 seconds.
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.11499999999999998, 0.12199999999999998, 0.022294981363041342, 1e-18, 0.04)
+[Candidate  7416/9261]: time elapsed        33938.39 seconds.
+Warning: Negative final concentration for the following initial concentrations: (0.129, 0.136, 0.022420164488948093, 1e-18, 0.04)
+[Candidate  8343/9261]: time elapsed        38950.03 seconds.
+Warning: Negative final concentration for the following initial concentrations: (0.143, 0.11499999999999998, 0.020213135934194847, 1e-18, 0.04)
+Warning: Negative final concentration for the following initial concentrations: (0.143, 0.11499999999999998, 0.020213135934194847, 1e-18, 0.04)
+[Candidate  9261/9261]: time elapsed        43955.70 seconds.
+----------------------------------------------------------------------------------------------------

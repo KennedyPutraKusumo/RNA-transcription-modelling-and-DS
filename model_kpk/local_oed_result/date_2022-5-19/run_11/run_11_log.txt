@@ -1,0 +1,103 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 2
+Number of candidates                    : 9261
+Number of responses                     : 7
+Number of measured responses            : 7
+Number of time-invariant controls       : 3
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-19 17:18:47.042343
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 9261
+
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 18564           
+  Cones                  : 2               
+  Scalar variables       : 9285            
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer started.
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 18564           
+  Cones                  : 2               
+  Scalar variables       : 9285            
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 6               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 24
+Optimizer  - Cones                  : 4
+Optimizer  - Scalar variables       : 9276              conic                  : 14              
+Optimizer  - Semi-definite variables: 1                 scalarized             : 10              
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 190               after factor           : 190             
+Factor     - dense dim.             : 0                 flops                  : 6.30e+05        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   1.3e+00  1.3e+00  4.3e+00  0.00e+00   1.655676798e+00   -1.610204003e+00  1.0e+00  0.03  
+1   3.8e-01  3.8e-01  8.5e-01  5.28e-01   6.825152273e-01   -4.423220419e-01  2.9e-01  0.03  
+2   1.2e-01  1.2e-01  1.7e-01  6.13e-01   -1.676214439e-01  -5.491134664e-01  8.9e-02  0.03  
+3   5.6e-02  5.6e-02  7.1e-02  6.22e-01   -8.105244726e-01  -1.010936098e+00  4.3e-02  0.03  
+4   2.0e-02  2.0e-02  1.2e-02  1.21e+00   -6.067393497e-01  -6.793930722e-01  1.6e-02  0.03  
+5   1.2e-02  1.2e-02  6.6e-03  6.30e-01   -5.481187512e-01  -5.950013656e-01  9.2e-03  0.03  
+6   6.4e-03  6.4e-03  2.5e-03  1.14e+00   -4.624529271e-01  -4.865920990e-01  5.0e-03  0.05  
+7   4.6e-03  4.6e-03  1.8e-03  7.24e-01   -3.627905583e-01  -3.811654014e-01  3.5e-03  0.05  
+8   2.6e-03  2.6e-03  7.2e-04  1.37e+00   -2.338937066e-01  -2.434283063e-01  2.0e-03  0.05  
+9   1.5e-03  1.5e-03  3.0e-04  1.15e+00   -1.049063930e-01  -1.099820885e-01  1.1e-03  0.05  
+10  1.3e-03  1.3e-03  2.4e-04  9.83e-01   -1.528908424e-01  -1.572829043e-01  9.8e-04  0.05  
+11  8.4e-05  8.4e-05  4.8e-06  1.01e+00   -1.288931660e-01  -1.291175110e-01  6.5e-05  0.05  
+12  1.3e-06  1.3e-06  9.7e-09  9.92e-01   -1.272354223e-01  -1.272386381e-01  1.0e-06  0.05  
+13  1.8e-07  1.8e-07  4.9e-10  9.98e-01   -1.271774127e-01  -1.271778560e-01  1.4e-07  0.06  
+14  2.5e-08  2.5e-08  2.5e-11  9.99e-01   -1.271694739e-01  -1.271695358e-01  1.9e-08  0.06  
+15  6.9e-09  4.0e-09  1.6e-12  1.00e+00   -1.271685660e-01  -1.271685760e-01  3.1e-09  0.06  
+Optimizer terminated. Time: 0.08    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -1.2716856597e-01   nrm: 7e+00    Viol.  con: 1e-08    var: 0e+00    barvar: 0e+00    cones: 0e+00  
+  Dual.    obj: -1.2716857601e-01   nrm: 1e+01    Viol.  con: 0e+00    var: 3e-10    barvar: 6e-09    cones: 0e+00  
+---------------------------------[Optimization Complete in 34.33 s]---------------------------------
+Complete: 
+ ~ sensitivity analysis took 0.00 CPU seconds.
+ ~ optimization with MOSEK via cvxpy took 34.33 CPU seconds.
+####################################################################################################
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-05-19 17:19:21.712897
+Criterion                               : d_opt_criterion
+Criterion Value                         : 0.12716856597271842
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 9261
+Number of Optimal Candidates            : 2
+Information Matrix Regularized          : False
+Minimum Effort Threshold                : 0.0001
+------------------------------------------[Candidate 6969]------------------------------------------
+                             Recommended Effort: 50.01% of experiments                              
+Time-invariant Controls:
+[0.115 0.122 1.35 ]
+------------------------------------------[Candidate 8967]------------------------------------------
+                             Recommended Effort: 49.99% of experiments                              
+Time-invariant Controls:
+[0.15  0.052 1.5  ]
+####################################################################################################

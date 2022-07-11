@@ -1,0 +1,179 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 5
+Number of candidates                    : 1331
+Number of responses                     : 1
+Number of measured responses            : 1
+Number of time-invariant controls       : 3
+Number of sampling time choices         : 9
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-19 17:52:28.031611
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : True
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 1331
+Number of Sampling Time Choices         : 9
+Sampling Times Optimized                : True
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate   134/1331]: time elapsed            4.66 seconds.
+[Candidate   268/1331]: time elapsed           11.91 seconds.
+[Candidate   402/1331]: time elapsed           21.32 seconds.
+[Candidate   536/1331]: time elapsed           32.97 seconds.
+[Candidate   670/1331]: time elapsed           46.90 seconds.
+[Candidate   804/1331]: time elapsed           63.10 seconds.
+[Candidate   938/1331]: time elapsed           81.57 seconds.
+[Candidate  1072/1331]: time elapsed          102.43 seconds.
+[Candidate  1206/1331]: time elapsed          125.58 seconds.
+[Candidate  1331/1331]: time elapsed          149.19 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 12210           
+  Cones                  : 5               
+  Scalar variables       : 12084           
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer started.
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 12210           
+  Cones                  : 5               
+  Scalar variables       : 12084           
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 6               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 141
+Optimizer  - Cones                  : 6
+Optimizer  - Scalar variables       : 10690             conic                  : 41              
+Optimizer  - Semi-definite variables: 2                 scalarized             : 70              
+Factor     - setup time             : 0.03              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 6586              after factor           : 6586            
+Factor     - dense dim.             : 0                 flops                  : 1.74e+07        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   1.3e+00  1.3e+00  9.2e+00  0.00e+00   4.139191995e+00   -4.025510008e+00  1.0e+00  0.14  
+1   3.6e-01  3.6e-01  2.0e+00  3.53e-01   2.197910196e+00   -9.155385755e-01  2.8e-01  0.14  
+2   9.2e-02  9.2e-02  3.9e-01  3.61e-01   1.369690203e+00   3.158806968e-01   7.1e-02  0.16  
+3   3.5e-02  3.5e-02  1.3e-01  3.23e-01   1.679133721e+00   1.172502691e+00   2.7e-02  0.16  
+4   1.5e-02  1.5e-02  4.2e-02  5.57e-01   1.845008663e+00   1.595547838e+00   1.2e-02  0.17  
+5   7.5e-03  7.5e-03  1.6e-02  6.90e-01   2.697682843e+00   2.566571184e+00   5.8e-03  0.17  
+6   4.0e-03  4.0e-03  6.6e-03  8.00e-01   3.265312036e+00   3.191715393e+00   3.1e-03  0.17  
+7   3.4e-03  3.4e-03  5.2e-03  8.12e-01   3.742926734e+00   3.680642909e+00   2.6e-03  0.19  
+8   2.0e-03  2.0e-03  2.1e-03  1.30e+00   5.022431586e+00   4.987976867e+00   1.6e-03  0.19  
+9   1.5e-03  1.5e-03  1.6e-03  8.29e-01   5.619734014e+00   5.593156975e+00   1.2e-03  0.20  
+10  8.7e-04  8.7e-04  6.2e-04  1.39e+00   6.778968202e+00   6.764673296e+00   6.8e-04  0.20  
+11  4.4e-04  4.4e-04  2.3e-04  1.08e+00   7.416734263e+00   7.409758090e+00   3.4e-04  0.20  
+12  3.6e-04  3.6e-04  1.7e-04  1.12e+00   7.544007989e+00   7.538437629e+00   2.8e-04  0.22  
+13  2.1e-04  2.1e-04  7.4e-05  1.14e+00   7.865233668e+00   7.862079551e+00   1.6e-04  0.22  
+14  1.7e-04  1.7e-04  5.3e-05  1.13e+00   8.025748842e+00   8.023227734e+00   1.3e-04  0.23  
+15  8.7e-05  8.7e-05  1.9e-05  1.13e+00   8.228021590e+00   8.226776041e+00   6.7e-05  0.23  
+16  6.5e-05  6.5e-05  1.2e-05  1.13e+00   8.339224139e+00   8.338308643e+00   5.0e-05  0.25  
+17  6.0e-05  6.0e-05  1.1e-05  1.12e+00   8.351984563e+00   8.351138916e+00   4.7e-05  0.25  
+18  4.2e-05  4.2e-05  6.1e-06  1.12e+00   8.419581920e+00   8.419001314e+00   3.2e-05  0.27  
+19  3.9e-05  3.9e-05  5.4e-06  1.06e+00   8.422759129e+00   8.422224931e+00   3.0e-05  0.27  
+20  2.0e-05  2.0e-05  2.1e-06  1.06e+00   8.463307470e+00   8.463025487e+00   1.6e-05  0.28  
+21  1.3e-05  1.3e-05  1.1e-06  1.03e+00   8.473996909e+00   8.473815603e+00   1.0e-05  0.28  
+22  7.6e-06  7.6e-06  4.6e-07  1.02e+00   8.481432313e+00   8.481326414e+00   5.9e-06  0.28  
+23  2.0e-06  2.0e-06  6.5e-08  1.01e+00   8.491789912e+00   8.491761321e+00   1.6e-06  0.30  
+24  9.7e-07  9.7e-07  2.1e-08  1.00e+00   8.493585012e+00   8.493571389e+00   7.5e-07  0.30  
+25  4.6e-07  4.6e-07  6.7e-09  1.00e+00   8.494545804e+00   8.494539254e+00   3.6e-07  0.31  
+26  1.3e-07  1.3e-07  9.9e-10  1.00e+00   8.494989465e+00   8.494987628e+00   9.9e-08  0.31  
+27  3.1e-08  3.1e-08  1.1e-10  1.00e+00   8.495108062e+00   8.495107619e+00   2.4e-08  0.33  
+28  1.0e-08  5.6e-08  5.7e-12  1.00e+00   8.495133052e+00   8.495132991e+00   3.2e-09  0.33  
+29  2.4e-09  2.7e-07  6.5e-13  1.00e+00   8.495135960e+00   8.495135946e+00   7.5e-10  0.34  
+Optimizer terminated. Time: 0.36    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: 8.4951359597e+00    nrm: 2e+01    Viol.  con: 8e-09    var: 0e+00    barvar: 0e+00    cones: 0e+00  
+  Dual.    obj: 8.4951359456e+00    nrm: 7e+02    Viol.  con: 9e-16    var: 2e-10    barvar: 2e-09    cones: 0e+00  
+---------------------------------[Optimization Complete in 41.56 s]---------------------------------
+Complete: 
+ ~ sensitivity analysis took 149.19 CPU seconds.
+ ~ optimization with MOSEK via cvxpy took 41.56 CPU seconds.
+####################################################################################################
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-05-19 17:55:38.849417
+Criterion                               : d_opt_criterion
+Criterion Value                         : -8.495135959724209
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : True
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 1331
+Number of Optimal Candidates            : 8
+Number of Sampling Time Choices         : 9
+Sampling Times Optimized                : True
+Number of Samples Per Experiment        : 1
+Information Matrix Regularized          : False
+Minimum Effort Threshold                : 0.0001
+-------------------------------------------[Candidate 6]--------------------------------------------
+                              Recommended Effort: 3.70% of experiments                              
+Time-invariant Controls:
+[0.e+00 1.e-03 2.e+00]
+Sampling Times:
+[      4.00]: dedicate  3.70% of experiments
+-------------------------------------------[Candidate 11]-------------------------------------------
+                             Recommended Effort: 10.58% of experiments                              
+Time-invariant Controls:
+[0.e+00 1.e-03 3.e+00]
+Sampling Times:
+[      3.00]: dedicate 10.58% of experiments
+-------------------------------------------[Candidate 33]-------------------------------------------
+                             Recommended Effort: 26.31% of experiments                              
+Time-invariant Controls:
+[0.0e+00 1.4e-03 3.0e+00]
+Sampling Times:
+[      1.00]: dedicate  9.87% of experiments
+[      8.00]: dedicate 16.44% of experiments
+------------------------------------------[Candidate 121]-------------------------------------------
+                              Recommended Effort: 9.22% of experiments                              
+Time-invariant Controls:
+[0.    0.003 3.   ]
+Sampling Times:
+[      1.00]: dedicate  9.22% of experiments
+------------------------------------------[Candidate 127]-------------------------------------------
+                             Recommended Effort: 10.36% of experiments                              
+Time-invariant Controls:
+[1.e-07 1.e-03 2.e+00]
+Sampling Times:
+[      4.00]: dedicate 10.36% of experiments
+------------------------------------------[Candidate 616]-------------------------------------------
+                              Recommended Effort: 7.17% of experiments                              
+Time-invariant Controls:
+[5.e-07 1.e-03 3.e+00]
+Sampling Times:
+[      1.00]: dedicate  7.17% of experiments
+------------------------------------------[Candidate 737]-------------------------------------------
+                             Recommended Effort: 12.72% of experiments                              
+Time-invariant Controls:
+[6.e-07 1.e-03 3.e+00]
+Sampling Times:
+[      1.00]: dedicate 12.72% of experiments
+------------------------------------------[Candidate 1221]------------------------------------------
+                             Recommended Effort: 19.94% of experiments                              
+Time-invariant Controls:
+[1.e-06 1.e-03 3.e+00]
+Sampling Times:
+[      2.00]: dedicate 19.94% of experiments
+####################################################################################################

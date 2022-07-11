@@ -1,0 +1,94 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 9
+Number of candidates                    : 125
+Number of responses                     : 7
+Number of measured responses            : 7
+Number of time-invariant controls       : 3
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-03 11:36:39.379338
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 125
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate     13/125]: time elapsed           56.11 seconds.
+[Candidate     26/125]: time elapsed           97.34 seconds.
+[Candidate     39/125]: time elapsed          139.06 seconds.
+[Candidate     52/125]: time elapsed          180.27 seconds.
+[Candidate     65/125]: time elapsed          239.06 seconds.
+[Candidate     78/125]: time elapsed          280.86 seconds.
+[Candidate     91/125]: time elapsed          323.63 seconds.
+[Candidate    104/125]: time elapsed          369.52 seconds.
+[Candidate    117/125]: time elapsed          411.68 seconds.
+[Candidate    125/125]: time elapsed          441.18 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 971             
+  Cones                  : 9               
+  Scalar variables       : 422             
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer started.
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 971             
+  Cones                  : 9               
+  Scalar variables       : 422             
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 6               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 412
+Optimizer  - Cones                  : 10
+Optimizer  - Scalar variables       : 196               conic                  : 70              
+Optimizer  - Semi-definite variables: 2                 scalarized             : 216             
+Factor     - setup time             : 0.02              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 5.65e+04          after factor           : 5.65e+04        
+Factor     - dense dim.             : 0                 flops                  : 1.20e+07        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   1.3e+00  1.3e+00  1.6e+01  0.00e+00   7.450545592e+00   -7.245918014e+00  1.0e+00  0.05  
+1   3.6e-01  3.6e-01  3.5e+00  2.96e-01   5.142486453e+00   -7.061467676e-01  2.8e-01  0.06  
+2   8.2e-02  8.2e-02  6.7e-01  2.75e-01   1.114735133e+01   9.174394831e+00   6.4e-02  0.06  
+3   5.1e-03  5.1e-03  5.6e-02  1.22e-02   2.195215380e+01   2.222449022e+01   4.0e-03  0.06  
+4   1.9e-03  1.9e-03  1.2e-02  2.20e-01   2.927016659e+01   2.932077578e+01   1.4e-03  0.06  
+5   9.1e-04  9.1e-04  6.3e-03  6.07e-01   3.375738902e+01   3.389757885e+01   7.1e-04  0.06  
+6   3.4e-04  3.4e-04  1.5e-03  1.20e+00   4.089367486e+01   4.095073639e+01   2.6e-04  0.08  
+7   1.4e-04  1.4e-04  8.1e-04  1.51e-01   4.365370083e+01   4.382422834e+01   1.1e-04  0.08  
+8   3.4e-05  3.4e-05  1.2e-04  6.75e-01   5.211279446e+01   5.217627527e+01   2.6e-05  0.08  
+9   7.7e-06  7.7e-06  2.9e-05  1.64e-01   5.844752953e+01   5.853065422e+01   6.0e-06  0.08  
+10  2.7e-06  2.7e-06  8.5e-06  3.57e-01   6.356587556e+01   6.362626584e+01   2.1e-06  0.08  
+11  1.4e-06  1.4e-06  6.2e-06  -7.66e-02  6.386200031e+01   6.399380238e+01   1.1e-06  0.09  
+12  4.5e-07  4.5e-07  1.4e-06  3.26e-01   7.163832281e+01   7.169865429e+01   3.5e-07  0.09  
+13  2.3e-07  2.3e-07  6.7e-07  1.78e-01   7.482621907e+01   7.488148291e+01   1.8e-07  0.09  
+14  6.4e-08  6.4e-08  1.6e-07  2.32e-01   8.042277376e+01   8.046385073e+01   4.9e-08  0.09  
+15  2.0e-08  2.0e-08  6.3e-08  -1.92e-02  8.437378338e+01   8.444045148e+01   1.6e-08  0.11  
+16  1.3e-08  1.3e-08  3.7e-08  2.90e-01   8.687187341e+01   8.692522263e+01   1.0e-08  0.11  
+17  1.2e-08  1.1e-08  2.8e-08  2.64e-01   8.804033926e+01   8.808858601e+01   8.3e-09  0.11  
+18  1.2e-08  1.1e-08  2.8e-08  2.85e-01   8.804033926e+01   8.808858601e+01   8.3e-09  0.11  
+19  1.2e-08  1.1e-08  2.8e-08  4.13e-01   8.804033926e+01   8.808858601e+01   8.3e-09  0.13  
+Optimizer terminated. Time: 0.13    
+
+
+Interior-point solution summary
+  Problem status  : UNKNOWN
+  Solution status : UNKNOWN
+  Primal.  obj: 8.8040339264e+01    nrm: 1e+01    Viol.  con: 3e-05    var: 0e+00    barvar: 0e+00    cones: 0e+00  
+  Dual.    obj: 8.8088586009e+01    nrm: 3e+04    Viol.  con: 2e-15    var: 2e-11    barvar: 2e-05    cones: 0e+00  

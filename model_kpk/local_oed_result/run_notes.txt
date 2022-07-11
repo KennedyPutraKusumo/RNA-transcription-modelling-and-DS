@@ -1,0 +1,26 @@
+date_2022-3-15
+	i. run_1: 
+		1. initial OED run with four parameter subsets (k_app, K1, K2, k_ac)
+		2. saved sensitivities and atomics for 27 experimental candidates (3x3x3 grid)
+			a. Total Mg conc.		[0.01, 0.15]
+			b. Initial NTP conc.	[0.01, 0.15]
+			c. T7RNAP conc.			[0.50, 1.50]
+	ii. run_2:
+		1. OED run with all 9 parameters (k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4, K5)
+		2. saved sensitivities and atomics for 27 experimental candidates (3x3x3 grid)
+			a. Total Mg conc.		[0.01, 0.15]
+			b. Initial NTP conc.	[0.01, 0.15]
+			c. T7RNAP conc.			[0.50, 1.50]
+	iii. Both "run_1" and "run_2" lead to failure in MOSEK.
+		1. [WARNING]: sign of non-identifiable model with given setup
+		2. in folder "model_kpk"
+			- identifiability_sheet.xslx
+				+ an excel sheet for analyzing identifiability analysis of the RNA transcription model.
+				+ the model depends on:
+					# "one_atomic.csv"
+						contains the 9x9 atomic info-matrix of the first candidate in csv form
+					# "total_fim.csv" 
+						contains a single 9x9 matrix, the sum of all 3x3x3=27 of each atomic_fims from
+				+ note the sheet "total_fim", most parameters have 0 sensitivities. Exceptions
+					# k_app (row, column one)
+					# k_Mg (row, column six)

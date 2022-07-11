@@ -1,0 +1,118 @@
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 2
+Number of candidates                    : 1331
+Number of responses                     : 1
+Number of measured responses            : 1
+Number of time-invariant controls       : 3
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-03-15 12:24:26.513166
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 1331
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate   134/1331]: time elapsed          101.78 seconds.
+[Candidate   268/1331]: time elapsed          212.87 seconds.
+[Candidate   402/1331]: time elapsed          322.27 seconds.
+[Candidate   536/1331]: time elapsed          434.67 seconds.
+[Candidate   670/1331]: time elapsed          555.38 seconds.
+[Candidate   804/1331]: time elapsed          675.98 seconds.
+[Candidate   938/1331]: time elapsed          791.91 seconds.
+[Candidate  1072/1331]: time elapsed          923.83 seconds.
+[Candidate  1206/1331]: time elapsed         1065.53 seconds.
+[Candidate  1331/1331]: time elapsed         1186.32 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2704            
+  Cones                  : 2               
+  Scalar variables       : 1355            
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer started.
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2704            
+  Cones                  : 2               
+  Scalar variables       : 1355            
+  Matrix variables       : 2               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 6               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 24
+Optimizer  - Cones                  : 4
+Optimizer  - Scalar variables       : 1346              conic                  : 14              
+Optimizer  - Semi-definite variables: 1                 scalarized             : 10              
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 190               after factor           : 190             
+Factor     - dense dim.             : 0                 flops                  : 9.25e+04        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   1.3e+00  1.3e+00  4.3e+00  0.00e+00   1.655676798e+00   -1.610204003e+00  1.0e+00  0.02  
+1   3.8e-01  3.8e-01  8.4e-01  5.29e-01   7.375661534e-01   -3.713953357e-01  2.9e-01  0.02  
+2   1.2e-01  1.2e-01  1.9e-01  6.25e-01   5.230156463e-01   1.140116129e-01   9.6e-02  0.02  
+3   4.9e-02  4.9e-02  6.4e-02  5.87e-01   1.034957164e+00   8.576948107e-01   3.8e-02  0.02  
+4   2.2e-02  2.2e-02  1.5e-02  1.38e+00   1.899375188e+00   1.822243348e+00   1.7e-02  0.02  
+5   1.4e-02  1.4e-02  1.2e-02  4.28e-01   2.081650974e+00   2.023148058e+00   1.1e-02  0.02  
+6   8.3e-03  8.3e-03  3.6e-03  1.81e+00   2.812757807e+00   2.783524564e+00   6.4e-03  0.02  
+7   4.9e-03  4.9e-03  1.6e-03  1.06e+00   2.942046490e+00   2.925250974e+00   3.8e-03  0.02  
+8   2.4e-03  2.4e-03  5.7e-04  1.07e+00   3.152916070e+00   3.144902230e+00   1.8e-03  0.02  
+9   1.8e-03  1.8e-03  3.9e-04  9.84e-01   3.143975769e+00   3.137799008e+00   1.4e-03  0.02  
+10  1.6e-04  1.6e-04  1.1e-05  9.99e-01   3.230457946e+00   3.229977251e+00   1.2e-04  0.02  
+11  1.8e-05  1.8e-05  4.3e-07  9.80e-01   3.238506386e+00   3.238450617e+00   1.4e-05  0.02  
+12  8.8e-07  8.8e-07  4.5e-09  9.96e-01   3.239551751e+00   3.239549091e+00   6.8e-07  0.02  
+13  1.0e-07  1.0e-07  1.9e-10  9.99e-01   3.239596575e+00   3.239596258e+00   8.1e-08  0.02  
+14  1.2e-08  1.2e-08  7.2e-12  1.00e+00   3.239601736e+00   3.239601700e+00   9.3e-09  0.02  
+Optimizer terminated. Time: 0.02    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: 3.2396017365e+00    nrm: 3e+00    Viol.  con: 2e-08    var: 0e+00    barvar: 0e+00    cones: 0e+00  
+  Dual.    obj: 3.2396016998e+00    nrm: 3e+01    Viol.  con: 4e-16    var: 2e-09    barvar: 2e-08    cones: 0e+00  
+---------------------------------[Optimization Complete in 2.83 s]----------------------------------
+Complete: 
+ ~ sensitivity analysis took 1186.32 CPU seconds.
+ ~ optimization with MOSEK via cvxpy took 2.83 CPU seconds.
+####################################################################################################
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-03-15 12:44:15.681494
+Criterion                               : d_opt_criterion
+Criterion Value                         : -3.2396017364564886
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 1331
+Number of Optimal Candidates            : 2
+Information Matrix Regularized          : True
+Regularization Epsilon                  : 1e-05
+Minimum Effort Threshold                : 0.0001
+------------------------------------------[Candidate 1254]------------------------------------------
+                             Recommended Effort: 50.00% of experiments                              
+Time-invariant Controls:
+[0.15  0.052 1.5  ]
+------------------------------------------[Candidate 1298]------------------------------------------
+                             Recommended Effort: 50.00% of experiments                              
+Time-invariant Controls:
+[0.15  0.108 1.5  ]
+####################################################################################################
