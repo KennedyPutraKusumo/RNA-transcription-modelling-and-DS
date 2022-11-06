@@ -156,19 +156,21 @@ def tr(t, y, trans_constants, guess):
     return np.array([df0dt, df1dt, df2dt, df3dt, df4dt, df5dt, df6dt]), guess
 
 
-def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4, K5):
-## Takes the N x D vector X, where each of the N rows denotes one set of D-dimensional inputs
-## and various parameters to return the array of RNA concentrations associated with each of the N samples
-# Columns of X: 1st column: end time of simulation, 2nd: C_Mg_0 initial, 3rd: C_NTP_0 initial
-# 4th: C_spermidine (not used after all), 5th: C_T7RNAP
+def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4,
+                                           K5):
+    ## Takes the N x D vector X, where each of the N rows denotes one set of D-dimensional inputs
+    ## and various parameters to return the array of RNA concentrations associated with each of the N samples
+    # Columns of X: 1st column: end time of simulation, 2nd: C_Mg_0 initial, 3rd: C_NTP_0 initial
+    # 4th: C_spermidine (not used after all), 5th: C_T7RNAP
 
-# Note that this function is not efficient for calculating different RNA yields at different times during the same
-# trajectory (at same Mg, NTP and spermidine). Even for the same initial concentrations every time step along the 
-# same trajectory needs to be called separately
-    
-    t_array = X[:, 0]  # size N: 1st column of X vector, the time of each of the N samples
+    # Note that this function is not efficient for calculating different RNA yields at different times during the same
+    # trajectory (at same Mg, NTP and spermidine). Even for the same initial concentrations every time step along the
+    # same trajectory needs to be called separately
+
+    t_array = X[:,
+              0]  # size N: 1st column of X vector, the time of each of the N samples
     N = len(t_array)
-    
+
     # The following parameters were set to avoid overfitting or through a priori knowledge
     k_d = 0
     alpha = 1
@@ -177,56 +179,60 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
     n_ba = 1
     n_Mg = 1
     n_RNA = 1
-    
-    ## Mainly used for parameter estimation. 
+
+    ## Mainly used for parameter estimation.
     ## Uncomment one of these to fix a certain parameter no matter what its input
-    #K1 = 0
-    #K2 = 0
-    #k_ac = 0
-    #k_ba = 0
+    # K1 = 0
+    # K2 = 0
+    # k_ac = 0
+    # k_ba = 0
     K3 = 0
     K4 = 0
     K5 = 0
     k_precip = 0
-    
-    C_array = np.zeros((N, 7))
-    
+
+    C_array = np.zeros(N)
+
     for j in range(N):
 
-        C_PPi_0 = 1e-18 # [M], Always assme non-zero, very small initial C_PPi_0 for numerical stability
-        C_H = 10**(-7.5) # [M], Assume initial pH is 7.5, at pKa of HEPES buffer
-        C_Mg_0 = X[j,1] # [M]
-        C_NTP_0 = X[j,2] # [M]
-        C_T7RNAP_0 = X[j,4] # [U/L]
-        C_HEPES_0 = 0.04 # Always assume same concentration for initial HEPES
-        
+        C_PPi_0 = 1e-18  # [M], Always assme non-zero, very small initial C_PPi_0 for numerical stability
+        C_H = 10 ** (-7.5)  # [M], Assume initial pH is 7.5, at pKa of HEPES buffer
+        C_Mg_0 = X[j, 1]  # [M]
+        C_NTP_0 = X[j, 2]  # [M]
+        C_T7RNAP_0 = X[j, 4]  # [U/L]
+        C_HEPES_0 = 0.04  # Always assume same concentration for initial HEPES
+
         ## At first, find C_H_0 given C_H
         ## Find valid initial guess, especially important at first time step
-        tot_conc0 = (C_Mg_0, C_NTP_0, C_H, C_PPi_0, C_HEPES_0) 
+        tot_conc0 = (C_Mg_0, C_NTP_0, C_H, C_PPi_0, C_HEPES_0)
         guess = initguess(C_Mg_0, C_NTP_0, C_PPi_0, C_HEPES_0)
-        all_vals = fsolve(solution, guess, args = tot_conc0)
-        if (all_vals<0).any():
-            warnings.warn("Warning: No valid guess found for solution() at initial conditions of: " + str(tot_conc0))
-        
+        all_vals = fsolve(solution, guess, args=tot_conc0)
+        if (all_vals < 0).any():
+            warnings.warn(
+                "Warning: No valid guess found for solution() at initial conditions of: " + str(
+                    tot_conc0))
+
         # After knowing C_H_0, all total concentrations are known to find guess free solution concentrations
         C_H_0 = all_vals[2]
         guess[2] = C_H
         tot_conc0 = (C_Mg_0, C_NTP_0, C_H_0, C_PPi_0, C_HEPES_0)
-        guess = fsolve(solution_proton, guess, args = tot_conc0) # Set guess for future timesteps
-        
+        guess = fsolve(solution_proton, guess,
+                       args=tot_conc0)  # Set guess for future timesteps
+
         # Retrieve parameters used for kinetics
         trans_cons = (k_app, K1, K2, alpha, Nall, k_d, k_ac, n_ac, k_ba, n_ba, k_Mg, n_Mg, n_RNA, K3, K4, K5, k_precip)
-        
-        N_step = 101 # 101 time steps for numerical integration was found to give OK stability
-        U_0 = [0, C_PPi_0, C_NTP_0, C_H_0, C_T7RNAP_0, C_Mg_0, 0] # Set array of initial concentrations
 
-        t1 = np.linspace(0, t_array[j], N_step) # Set time grid for current simulation
-        delta_t = t1[1]-t1[0] # Time step
-        U1 = np.zeros((N_step, len(U_0))) # Matrix storing concentrations at all intermediate time steps for given D-dimensional input
-        U1[0] = U_0 # Initial conditions
-        
+        N_step = 101  # 101 time steps for numerical integration was found to give OK stability
+        U_0 = [0, C_PPi_0, C_NTP_0, C_H_0, C_T7RNAP_0, C_Mg_0]  # Set array of initial concentrations
+
+        t1 = np.linspace(0, t_array[j], N_step)  # Set time grid for current simulation
+        delta_t = t1[1] - t1[0]  # Time step
+        U1 = np.zeros((N_step,
+                       len(U_0)))  # Matrix storing concentrations at all intermediate time steps for given D-dimensional input
+        U1[0] = U_0  # Initial conditions
+
         ## Runge-Kutta 4 solver to iterate over each time step
-        for n in range(N_step-1):
+        for n in range(N_step - 1):
             y_1 = U1[n]
             dy_1, guess = tr(t1[n], y_1, trans_cons, guess)
             y_2 = U1[n] + 0.5 * delta_t * dy_1
@@ -235,25 +241,22 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
             dy_3, guess = tr(t1[n] + 0.5 * delta_t, y_3, trans_cons, guess)
             y_4 = U1[n] + delta_t * dy_3
             dy_4, guess = tr(t1[n] + delta_t, y_4, trans_cons, guess)
-            U1[n+1] = U1[n] + delta_t / 6.0 * (dy_1+ 2.0 * dy_2 + 2.0 * dy_3 + dy_4) 
-        
-        if (U1[-1]<0).any():
-            # warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
-            print("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
+            U1[n + 1] = U1[n] + delta_t / 6.0 * (dy_1 + 2.0 * dy_2 + 2.0 * dy_3 + dy_4)
+
+        if (U1[-1] < 0).any():
+            warnings.warn(
+                "Warning: Negative final concentration for the following initial concentrations: " + str(
+                    tot_conc0))
             C_array[j] = -0.001
         elif np.isfinite(U1[-1]).all():
-            # C_array[j] = U1[-1][0]*5e6  # RNA molecular weight
-            C_array[j] = U1[-1]  # RNA molecular weight
+            C_array[j] = U1[-1][0] * 5e6  # RNA molecular weight
         else:
-            # warnings.warn("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
-            print("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
+            warnings.warn(
+                "Warning: Unstable solution for the following initial concentrations: " + str(
+                    tot_conc0))
             C_array[j] = 1e4
-    # Return N-dimensional RNA yield corresponding to X    
+    # Return N-dimensional RNA yield corresponding to X
     return C_array
-    # full_array = np.array([
-    #     C_array,
-    # ])
-    # return full_array
 
 def datafitting_transcription_prob_stDev(X, stDev_per, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4, K5):
 ## Same function as datafitting_transcription_experimental() but with the additional input of a standartd deviation
