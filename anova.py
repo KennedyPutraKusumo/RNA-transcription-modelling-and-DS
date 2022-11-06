@@ -41,8 +41,19 @@ def cross_term(data, predictions, std_error=1):
 
 
 if __name__ == '__main__':
+    if True:
+        data_set_file = "Experimental_Data.xlsx"
+        # mp = [4.34, 5.55e+05, 1.94e+05, 1.20e+06, 0, 0, 0, 0, 0]  # taken from "3D_deterministic_DS.py"
+        mp = [2.61785814e+00, 3.34773771e+05, 1.17179087e+05, 1.20226431e+06,
+              7.53834439e-07, 5.59613926e-01, 1.00000000e-10, 1.00000000e-10,
+              1.00000000e-10]
+    else:
+        data_set_file = "2022_11_25_rsm_doe_data.xlsx"
+        mp = [2.61785814e+00, 3.34773771e+05, 1.17179087e+05, 1.20226431e+06,
+              7.53834439e-07, 5.59613926e-01, 1.00000000e-10, 1.00000000e-10,
+              1.00000000e-10]
     exp_data = pd.read_excel(
-        "Experimental_Data.xlsx",
+        data_set_file,
         sheet_name="ModelData",
         header=0,
     )
@@ -54,7 +65,6 @@ if __name__ == '__main__':
 
     X = exp_data.loc[:, "t [hr]":"T7RNAP ratio"]
     X_numpy = X.to_numpy()
-    mp = [4.34, 5.55e+05, 1.94e+05, 1.20e+06, 0, 0, 0, 0, 0]    # taken from "3D_deterministic_DS.py"
 
     predictions = datafitting_transcription_experimental(
         X_numpy,

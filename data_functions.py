@@ -26,7 +26,12 @@ def plot_experimental_data(ax, data, stdev):
 
 def get_experimental_data():
     ## Extract the data from specific columns in a certain sheet in a given Excel file as dataframe
-    data_DoE = pd.read_excel('Experimental_Data.xlsx', 'ModelData')
+    if True:
+        data_DoE = pd.read_excel('Experimental_Data.xlsx', 'ModelData')
+        n_repetitions = 3
+    else:
+        data_DoE = pd.read_excel('2022_11_25_rsm_doe_data.xlsx', 'ModelData')
+        n_repetitions = 2
     dataFrame_DoE = pd.DataFrame(data_DoE, columns = ['t [hr]', 'Mg2+ [M]', 'NTP [M]', 'Spermidine [M]',                                                   'T7RNAP ratio', 'template ratio', 'RNA [g/L]'])
     # Last column of dataframe is RNA yield, while all the other columns are 'input'
     indVar_DoE = dataFrame_DoE.values
@@ -35,17 +40,17 @@ def get_experimental_data():
 
     ## Each data sample appears three times, so take the average, st dev, 
     ## mean absolute error and mean square error of data set
-    C_RNA_new = np.zeros(int(len(C_RNA_exp2)/3))
-    X_new = np.zeros((int(len(X2)/3), len(X2[0])))
-    C_RNA_stdev = np.zeros(int(len(C_RNA_exp2)/3))
+    C_RNA_new = np.zeros(int(len(C_RNA_exp2)/n_repetitions))
+    X_new = np.zeros((int(len(X2)/n_repetitions), len(X2[0])))
+    C_RNA_stdev = np.zeros(int(len(C_RNA_exp2)/n_repetitions))
     MAE_exp = []
     MSE_exp = []
     for i in range(len(C_RNA_exp2)):
-        if i%3 == 0:
-            C_RNA_new[int(i/3)] = np.average(C_RNA_exp2[i:i+3])
-            X_new[int(i/3)] = X2[i]
-            C_RNA_stdev[int(i/3)] = np.std(C_RNA_exp2[i:i+3])
+        if i%n_repetitions == 0:
+            C_RNA_new[int(i/n_repetitions)] = np.average(C_RNA_exp2[i:i+n_repetitions])
+            X_new[int(i/n_repetitions)] = X2[i]
+            C_RNA_stdev[int(i/n_repetitions)] = np.std(C_RNA_exp2[i:i+n_repetitions])
         
-            MAE_exp.append(np.sum(abs(C_RNA_exp2[i:i+3]-np.average(C_RNA_exp2[i:i+3]))/3))
-            MSE_exp.append(np.sum((C_RNA_exp2[i:i+3]-np.average(C_RNA_exp2[i:i+3]))**2/3))
+            MAE_exp.append(np.sum(abs(C_RNA_exp2[i:i+n_repetitions]-np.average(C_RNA_exp2[i:i+n_repetitions]))/n_repetitions))
+            MSE_exp.append(np.sum((C_RNA_exp2[i:i+n_repetitions]-np.average(C_RNA_exp2[i:i+n_repetitions]))**2/n_repetitions))
     return X_new, C_RNA_new, C_RNA_stdev, MAE_exp, MSE_exp

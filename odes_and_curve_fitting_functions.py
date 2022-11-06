@@ -249,11 +249,11 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
             print("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
             C_array[j] = 1e4
     # Return N-dimensional RNA yield corresponding to X    
-    # return C_array
-    full_array = np.array([
-        C_array,
-    ])
-    return full_array
+    return C_array
+    # full_array = np.array([
+    #     C_array,
+    # ])
+    # return full_array
 
 def datafitting_transcription_prob_stDev(X, stDev_per, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4, K5):
 ## Same function as datafitting_transcription_experimental() but with the additional input of a standartd deviation
