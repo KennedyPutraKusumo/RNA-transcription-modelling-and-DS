@@ -1,0 +1,51 @@
+C:\ProgramData\Anaconda3\pythonw.exe "C:/Users/kenne/Python Projects/RNA-transcription-modelling-and-DS/curve_fitting_exploration_prediction.py"
+Experimental mean absolute error: 0.1418
+Experimental mean squared error: 0.0636
+Optimal parameters:  [2.61785814e+00 3.34773771e+05 1.17179087e+05 1.20226431e+06
+ 7.53834439e-07 5.59613926e-01 1.00000000e-10 1.00000000e-10
+ 1.00000000e-10]
+Standard deviation:  [1.39821904e+04 1.78816068e+09 6.25997067e+08 2.89104206e+06
+ 8.33564032e+05 3.22226803e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Correlation matrix:  [[ 1.          1.          1.          0.35390273  0.09292367 -0.5952338
+   0.          0.          0.        ]
+ [ 1.          1.          0.99999999  0.35391145  0.09291148 -0.59524899
+   0.          0.          0.        ]
+ [ 1.          0.99999999  1.          0.35393876  0.0928577  -0.59517808
+   0.          0.          0.        ]
+ [ 0.35390273  0.35391145  0.35393876  1.         -0.78271364 -0.05494677
+   0.          0.          0.        ]
+ [ 0.09292367  0.09291148  0.0928577  -0.78271364  1.         -0.45997531
+   0.          0.          0.        ]
+ [-0.5952338  -0.59524899 -0.59517808 -0.05494677 -0.45997531  1.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]]
+3.3458149433135986 seconds for  51 simulations
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\matplotlib\projections\__init__.py", line 58, in get_projection_class
+    return projection_registry.get_projection_class(projection)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\matplotlib\projections\__init__.py", line 25, in get_projection_class
+    return self._all_projection_types[name]
+KeyError: '3d'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:/Users/kenne/Python Projects/RNA-transcription-modelling-and-DS/curve_fitting_exploration_prediction.py", line 99, in <module>
+    print('Simulated mean absolute error: ', np.average(abs(y_sim - C_RNA_new)))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\matplotlib\figure.py", line 1396, in add_subplot
+    self._process_projection_requirements(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\matplotlib\figure.py", line 1120, in _process_projection_requirements
+    projection_class = projections.get_projection_class(projection)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\matplotlib\projections\__init__.py", line 60, in get_projection_class
+    raise ValueError("Unknown projection %r" % projection)
+ValueError: Unknown projection '3d'
+Simulated mean absolute error:  0.2841798474253673
+Simulated mean squared error:  0.15923532908725904
+
+Process finished with exit code 1
