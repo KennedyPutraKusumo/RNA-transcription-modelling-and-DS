@@ -1,0 +1,32 @@
+C:\ProgramData\Anaconda3\pythonw.exe "C:/Users/kenne/Python Projects/RNA-transcription-modelling-and-DS/curve_fitting_exploration_prediction.py"
+Experimental mean absolute error: 2246.0894
+Experimental mean squared error: 7781050.6785
+C:\Users\kenne\Python Projects\RNA-transcription-modelling-and-DS\odes_and_curve_fitting_functions.py:233: UserWarning: Warning: Negative final concentration for the following initial concentrations: (0.024, 0.004, 0.020001982543059908, 1e-18, 0.04)
+  warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
+C:\Users\kenne\Python Projects\RNA-transcription-modelling-and-DS\odes_and_curve_fitting_functions.py:233: UserWarning: Warning: Negative final concentration for the following initial concentrations: (0.006, 0.001, 0.020002081246714452, 1e-18, 0.04)
+  warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
+C:\Users\kenne\Python Projects\RNA-transcription-modelling-and-DS\odes_and_curve_fitting_functions.py:233: UserWarning: Warning: Negative final concentration for the following initial concentrations: (0.042, 0.007, 0.020001925120014676, 1e-18, 0.04)
+  warnings.warn("Warning: Negative final concentration for the following initial concentrations: " + str(tot_conc0))
+C:\Users\kenne\Python Projects\RNA-transcription-modelling-and-DS\odes_and_curve_fitting_functions.py:238: UserWarning: Warning: Unstable solution for the following initial concentrations: (0.024, 0.004, 0.020001982543059908, 1e-18, 0.04)
+  warnings.warn("Warning: Unstable solution for the following initial concentrations: " + str(tot_conc0))
+Optimal parameters:  [1.18869514e+00 2.00000000e+01 1.00000000e+02 1.00000000e+06
+ 1.00000000e+06 2.00000000e+00 1.00000000e-10 1.00000000e-10
+ 1.00000000e-10]
+Standard deviation:  [1.06766872e-08 0.00000000e+00 1.26913263e-10 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Correlation matrix:  [[1. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+Traceback (most recent call last):
+  File "C:/Users/kenne/Python Projects/RNA-transcription-modelling-and-DS/curve_fitting_exploration_prediction.py", line 76, in <module>
+    col[i] = color_list[0] ; col[11+i] = color_list[1] ; col[11*2+i] = color_list[2]
+IndexError: list assignment index out of range
+
+Process finished with exit code 1

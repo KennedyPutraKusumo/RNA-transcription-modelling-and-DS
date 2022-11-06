@@ -220,10 +220,13 @@ def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K
                        args=tot_conc0)  # Set guess for future timesteps
 
         # Retrieve parameters used for kinetics
-        trans_cons = (k_app, K1, K2, alpha, Nall, k_d, k_ac, n_ac, k_ba, n_ba, k_Mg, n_Mg, n_RNA, K3, K4, K5, k_precip)
+        trans_cons = (
+        k_app, K1, K2, alpha, Nall, k_d, k_ac, n_ac, k_ba, n_ba, k_Mg, n_Mg, n_RNA, K3,
+        K4, K5, k_precip)
 
         N_step = 101  # 101 time steps for numerical integration was found to give OK stability
-        U_0 = [0, C_PPi_0, C_NTP_0, C_H_0, C_T7RNAP_0, C_Mg_0]  # Set array of initial concentrations
+        U_0 = [0, C_PPi_0, C_NTP_0, C_H_0, C_T7RNAP_0,
+               C_Mg_0]  # Set array of initial concentrations
 
         t1 = np.linspace(0, t_array[j], N_step)  # Set time grid for current simulation
         delta_t = t1[1] - t1[0]  # Time step
