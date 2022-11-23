@@ -1,0 +1,20 @@
+C:\ProgramData\Anaconda3\pythonw.exe "C:/Users/kenne/Python Projects/RNA-transcription-modelling-and-DS/refactored_model/S3_calibrate_model.py"
+C:\Users\kenne\Python Projects\RNA-transcription-modelling-and-DS\refactored_model\S1_model.py:30: RuntimeWarning: invalid value encountered in double_scalars
+  V_tr = k_tr * (C_RNA ** alpha["RNA"]) * (C_NTP ** alpha["NTP"]) * (C_Mg ** alpha["Mg"]) * (C_T7 * alpha["T7"]) * (C_DNA ** alpha["DNA"])
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\integrate\odepack.py:247: ODEintWarning: Excess accuracy requested (tolerances too small). Run with full_output = 1 to get quantitative information.
+  warnings.warn(warning_msg, ODEintWarning)
+=========================================Optimal Parameters=========================================
+[ 0.01176829, 0.01459927,-0.54281567, 1.        , 1.0052307 , 1.06075637,
+  1.13559156, 1.07186936, 1.        ]
+=============================================Covariance=============================================
+[[0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.],
+ [0.,0.,0.,0.,0.,0.,0.,0.,0.]]
+
+Process finished with exit code 0

@@ -1,4 +1,3 @@
-from odes_and_curve_fitting_functions import datafitting_transcription_experimental
 from scipy.stats import f
 from matplotlib import pyplot as plt
 import pandas as pd
@@ -41,37 +40,31 @@ def cross_term(data, predictions, std_error=1):
 
 
 if __name__ == '__main__':
-    if False:
-        data_set_file = "Experimental_Data.xlsx"
-        mp = [4.34, 5.55e+05, 1.94e+05, 1.20e+06, 0, 0, 0, 0, 0]  # taken from "3D_deterministic_DS.py"
-        # mp = [2.61785814e+00, 3.34773771e+05, 1.17179087e+05, 1.20226431e+06,
-        #       7.53834439e-07, 5.59613926e-01, 1.00000000e-10, 1.00000000e-10,
-        #       1.00000000e-10]
-    else:
-        data_set_file = "2022_11_25_rsm_doe_data.xlsx"
-        mp = [1.18869514e+00, 2.00000000e+01, 1.00000000e+02, 1.00000000e+06,
-              1.00000000e+06, 2.00000000e+00, 1.00000000e-10, 1.00000000e-10,
-              1.00000000e-10]
-    exp_data = pd.read_excel(
-        data_set_file,
-        sheet_name="ModelData",
-        header=0,
-    )
-    print(list(exp_data))
-    print(exp_data.head())
+    from S3_calibrate_model import fitting_function, import_data_fit_inputs, import_data_fit_responses
 
-    rna_data = exp_data["RNA [g/L]"]
+    dataset_selection = "25 November 2022"
+
+    if dataset_selection == "25 November 2022":
+        X_numpy = import_data_fit_inputs("2022_11_25_rsm_doe_data.xlsx", "SubsetData")
+        rna_data = import_data_fit_responses("2022_11_25_rsm_doe_data.xlsx", "SubsetData")
+        mp = [ 1.37815264e-04, 8.34154669e-04,-9.99997778e-01, 6.30866486e-01,
+  1.99999978e+00, 7.26133106e-01, 3.26195309e-01, 1.40735543e+00,
+  1.00000000e+00]
+    elif dataset_selection == "Publication Dataset":
+        X_numpy = import_data_fit_inputs("Experimental_Data.xlsx", "ScaledData")
+        rna_data = import_data_fit_responses("Experimental_Data.xlsx", "ScaledData")
+    else:
+        X_numpy = import_data_fit_inputs("2022_11_25_rsm_doe_data.xlsx", "SubsetData")
+        rna_data = import_data_fit_responses("2022_11_25_rsm_doe_data.xlsx", "SubsetData")
+        mp = [1.09042209e-04, 1.37811096e-03, -7.08819039e-01, 6.20550958e-06,
+              1.99999969e+00, 1.11117705e+00, 7.18763807e-01, 1.99999975e+00,
+              1.00000000e+00]
     measurement_std_error = 0.1
 
-    X = exp_data.loc[:, "t [hr]":"T7RNAP ratio"]
-    X_numpy = X.to_numpy()
-
-    predictions = datafitting_transcription_experimental(
+    rna_predictions = fitting_function(
         X_numpy,
         *mp,
     )
-    # rna_predictions = predictions * 5e6  # "5e6" is the RNA molecular weight
-    rna_predictions = predictions  # "5e6" is the RNA molecular weight
 
     tss = total_sum_of_squares(rna_data, std_error=measurement_std_error)
     print(f"Total Sum of Squares (TSS): {tss:.2f}")

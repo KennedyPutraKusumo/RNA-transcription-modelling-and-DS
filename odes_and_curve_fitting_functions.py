@@ -153,7 +153,8 @@ def tr(t, y, trans_constants, guess):
     df6dt = V_deg
     
     # Return both differential expressions and updated guess
-    return np.array([df0dt, df1dt, df2dt, df3dt, df4dt, df5dt, df6dt]), guess
+    # return np.array([df0dt, df1dt, df2dt, df3dt, df4dt, df5dt, df6dt]), guess
+    return np.array([df0dt, df1dt, df2dt, df3dt, df4dt, df5dt]), guess
 
 
 def datafitting_transcription_experimental(X, k_app, K1, K2, k_ac, k_ba, k_Mg, K3, K4,

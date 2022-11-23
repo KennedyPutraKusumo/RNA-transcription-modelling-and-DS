@@ -1,0 +1,220 @@
+C:\ProgramData\Anaconda3\pythonw.exe "C:/Users/kenne/Python Projects/RNA-transcription-modelling-and-DS/refactored_model/S6_local_oed.py"
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 9
+Number of candidates                    : 3125
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 5
+Number of sampling time choices         : 11
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-11-08 14:04:26.962490
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : True
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 3125
+Number of Sampling Time Choices         : 11
+Sampling Times Optimized                : True
+C:\Users\kenne\Python Projects\RNA-transcription-modelling-and-DS\refactored_model\S1_model.py:30: RuntimeWarning: invalid value encountered in double_scalars
+  V_tr = k_tr * (C_RNA ** alpha["RNA"]) * (C_NTP ** alpha["NTP"]) * (C_Mg ** alpha["Mg"]) * (C_T7 * alpha["T7"]) * (C_DNA ** alpha["DNA"])
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\integrate\odepack.py:247: ODEintWarning: Excess accuracy requested (tolerances too small). Run with full_output = 1 to get quantitative information.
+  warnings.warn(warning_msg, ODEintWarning)
+C:\ProgramData\Anaconda3\lib\site-packages\numdifftools\extrapolation.py:489: RuntimeWarning: invalid value encountered in less_equal
+  converged = err <= tol
+C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\function_base.py:3405: RuntimeWarning: All-NaN slice encountered
+  r = func(a, **kwargs)
+C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\nanfunctions.py:1354: RuntimeWarning: All-NaN slice encountered
+  overwrite_input, interpolation)
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+C:\ProgramData\Anaconda3\lib\site-packages\numdifftools\limits.py:173: RuntimeWarning: invalid value encountered in less
+  outliers = (((abs(der) < (a_median / trim_fact)) +
+C:\ProgramData\Anaconda3\lib\site-packages\numdifftools\limits.py:174: RuntimeWarning: invalid value encountered in greater
+  (abs(der) > (a_median * trim_fact))) * (a_median > 1e-8) +
+C:\ProgramData\Anaconda3\lib\site-packages\numdifftools\limits.py:175: RuntimeWarning: invalid value encountered in less
+  ((der < p25 - 1.5 * iqr) + (p75 + 1.5 * iqr < der)))
+C:\ProgramData\Anaconda3\lib\site-packages\numdifftools\limits.py:149: UserWarning: All-NaN slice encountered
+  warnings.warn(str(msg))
+[Candidate   313/3125]: time elapsed           19.35 seconds.
+[Candidate   626/3125]: time elapsed           42.59 seconds.
+[Candidate   939/3125]: time elapsed           59.62 seconds.
+[Candidate  1252/3125]: time elapsed           80.11 seconds.
+[Candidate  1565/3125]: time elapsed           96.98 seconds.
+[Candidate  1878/3125]: time elapsed          117.30 seconds.
+[Candidate  2191/3125]: time elapsed          134.59 seconds.
+[Candidate  2504/3125]: time elapsed          154.58 seconds.
+[Candidate  2817/3125]: time elapsed          172.98 seconds.
+[Candidate  3125/3125]: time elapsed          193.41 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+Problem
+  Name                   :
+  Objective sense        : min
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 34948
+  Cones                  : 8
+  Scalar variables       : 34615
+  Matrix variables       : 2
+  Integer variables      : 0
+
+Optimizer started.
+Problem
+  Name                   :
+  Objective sense        : min
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 34948
+  Cones                  : 8
+  Scalar variables       : 34615
+  Matrix variables       : 2
+  Integer variables      : 0
+
+Optimizer  - threads                : 4
+Optimizer  - solved problem         : the primal
+Optimizer  - Constraints            : 357
+Optimizer  - Cones                  : 9
+Optimizer  - Scalar variables       : 18093             conic                  : 89
+Optimizer  - Semi-definite variables: 2                 scalarized             : 172
+Factor     - setup time             : 0.22              dense det. time        : 0.00
+Factor     - ML order time          : 0.00              GP order time          : 0.00
+Factor     - nonzeros before factor : 4.24e+04          after factor           : 4.24e+04
+Factor     - dense dim.             : 0                 flops                  : 1.92e+08
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME
+0   1.3e+00  1.3e+00  1.4e+01  0.00e+00   6.622707193e+00   -6.440816013e+00  1.0e+00  0.56
+1   3.7e-01  3.7e-01  3.3e+00  3.05e-01   3.386688053e+00   -2.064810262e+00  2.9e-01  0.59
+2   8.1e-02  8.1e-02  5.8e-01  2.94e-01   -1.120256502e+00  -2.827432853e+00  6.3e-02  0.63
+3   3.3e-02  3.3e-02  2.0e-01  2.66e-01   -2.654930175e+00  -3.568551498e+00  2.5e-02  0.66
+4   9.1e-03  9.1e-03  4.5e-02  3.37e-01   -3.535717566e+00  -3.847232741e+00  7.0e-03  0.69
+5   3.2e-03  3.2e-03  1.2e-02  5.15e-01   -3.306479486e+00  -3.422193191e+00  2.5e-03  0.72
+6   2.2e-03  2.2e-03  7.2e-03  1.04e+00   -3.610844460e+00  -3.689499114e+00  1.7e-03  0.75
+7   1.4e-03  1.4e-03  3.1e-03  1.45e+00   -2.884556109e+00  -2.933453205e+00  1.1e-03  0.78
+8   1.2e-03  1.2e-03  2.8e-03  7.37e-01   -3.774146986e+00  -3.817423769e+00  9.4e-04  0.81
+9   7.2e-04  7.2e-04  1.2e-03  1.17e+00   -3.823840767e+00  -3.849615401e+00  5.6e-04  0.84
+10  6.0e-04  6.0e-04  9.3e-04  1.11e+00   -4.174734655e+00  -4.195940617e+00  4.7e-04  0.88
+11  4.5e-04  4.5e-04  6.3e-04  9.79e-01   -4.611001510e+00  -4.626702162e+00  3.5e-04  0.89
+12  3.4e-04  3.4e-04  4.2e-04  9.52e-01   -4.938346712e+00  -4.950572610e+00  2.7e-04  0.91
+13  2.4e-04  2.4e-04  2.5e-04  9.04e-01   -5.573273357e+00  -5.582131773e+00  1.9e-04  0.94
+14  1.8e-04  1.8e-04  1.7e-04  9.16e-01   -6.213683318e+00  -6.220502344e+00  1.4e-04  0.97
+15  1.7e-04  1.7e-04  1.5e-04  9.83e-01   -6.440420950e+00  -6.446705173e+00  1.3e-04  1.00
+16  1.3e-04  1.3e-04  1.0e-04  8.67e-01   -7.148029139e+00  -7.153051952e+00  1.0e-04  1.01
+17  1.2e-04  1.2e-04  8.1e-05  1.12e+00   -7.393910752e+00  -7.398370533e+00  9.2e-05  1.06
+18  8.6e-05  8.6e-05  4.9e-05  9.35e-01   -8.096981891e+00  -8.100264643e+00  6.7e-05  1.08
+19  5.8e-05  5.8e-05  2.6e-05  1.02e+00   -8.779363915e+00  -8.781573938e+00  4.5e-05  1.09
+20  4.4e-05  4.4e-05  1.7e-05  1.09e+00   -9.113856656e+00  -9.115526070e+00  3.4e-05  1.13
+21  3.2e-05  3.2e-05  1.1e-05  1.04e+00   -9.505713874e+00  -9.506927966e+00  2.5e-05  1.14
+22  2.5e-05  2.5e-05  7.4e-06  1.07e+00   -9.720203883e+00  -9.721143388e+00  2.0e-05  1.16
+23  1.3e-05  1.3e-05  2.8e-06  1.02e+00   -1.013707712e+01  -1.013755948e+01  1.0e-05  1.17
+24  8.7e-06  8.7e-06  1.5e-06  1.03e+00   -1.031848750e+01  -1.031880707e+01  6.7e-06  1.20
+25  4.2e-06  4.2e-06  5.0e-07  1.02e+00   -1.051314667e+01  -1.051330132e+01  3.3e-06  1.23
+26  3.4e-06  3.4e-06  3.6e-07  1.00e+00   -1.055555583e+01  -1.055567939e+01  2.6e-06  1.28
+27  1.2e-06  1.2e-06  7.5e-08  1.00e+00   -1.066681011e+01  -1.066685346e+01  9.2e-07  1.31
+28  4.2e-07  4.2e-07  1.6e-08  9.97e-01   -1.070787504e+01  -1.070789049e+01  3.2e-07  1.33
+29  5.9e-08  5.8e-08  8.2e-10  1.00e+00   -1.073010905e+01  -1.073011121e+01  4.5e-08  1.34
+30  1.7e-08  7.9e-09  4.1e-11  1.00e+00   -1.073327618e+01  -1.073327648e+01  6.2e-09  1.36
+31  1.4e-08  7.5e-09  3.8e-11  9.99e-01   -1.073330367e+01  -1.073330395e+01  5.8e-09  1.41
+32  2.2e-09  9.2e-10  1.6e-12  1.00e+00   -1.073372045e+01  -1.073372048e+01  7.1e-10  1.48
+Optimizer terminated. Time: 1.51
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -1.0733720449e+01   nrm: 2e+03    Viol.  con: 1e-08    var: 0e+00    barvar: 0e+00    cones: 0e+00
+  Dual.    obj: -1.0733720483e+01   nrm: 1e+02    Viol.  con: 0e+00    var: 1e-10    barvar: 5e-09    cones: 0e+00
+--------------------------------[Optimization Complete in 285.16 s]---------------------------------
+Complete:
+ ~ sensitivity analysis took 193.41 CPU seconds.
+ ~ optimization with MOSEK via cvxpy took 285.16 CPU seconds.
+####################################################################################################
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-11-08 14:12:25.634403
+Criterion                               : d_opt_criterion
+Criterion Value                         : 10.73372044906889
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : True
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 3125
+Number of Optimal Candidates            : 12
+Number of Sampling Time Choices         : 11
+Sampling Times Optimized                : True
+Number of Samples Per Experiment        : 1
+------------------------------------------[Candidate 371]-------------------------------------------
+                              Recommended Effort: 0.14% of experiments
+Time-invariant Controls:
+[1.0e-01 4.0e+00 3.5e+01 1.5e+01 3.0e-02]
+Sampling Times:
+[      2.00]: dedicate  0.14% of experiments
+------------------------------------------[Candidate 480]-------------------------------------------
+                             Recommended Effort: 13.69% of experiments
+Time-invariant Controls:
+[ 0.1  5.5 35.   4.   0.1]
+Sampling Times:
+[      2.00]: dedicate 13.69% of experiments
+------------------------------------------[Candidate 525]-------------------------------------------
+                              Recommended Effort: 1.90% of experiments
+Time-invariant Controls:
+[ 0.1  7.   6.  15.   0.1]
+Sampling Times:
+[      0.60]: dedicate  1.90% of experiments
+------------------------------------------[Candidate 550]-------------------------------------------
+                              Recommended Effort: 0.39% of experiments
+Time-invariant Controls:
+[ 0.1   7.   13.25 15.    0.1 ]
+Sampling Times:
+[      1.00]: dedicate  0.39% of experiments
+------------------------------------------[Candidate 580]-------------------------------------------
+                              Recommended Effort: 2.09% of experiments
+Time-invariant Controls:
+[ 0.1   7.   27.75  4.    0.1 ]
+Sampling Times:
+[      1.80]: dedicate  2.09% of experiments
+------------------------------------------[Candidate 601]-------------------------------------------
+                             Recommended Effort: 10.50% of experiments
+Time-invariant Controls:
+[1.0e-01 7.0e+00 3.5e+01 4.0e+00 3.0e-02]
+Sampling Times:
+[      2.00]: dedicate 10.50% of experiments
+------------------------------------------[Candidate 871]-------------------------------------------
+                              Recommended Effort: 7.38% of experiments
+Time-invariant Controls:
+[3.25e-01 2.50e+00 3.50e+01 1.50e+01 3.00e-02]
+Sampling Times:
+[      2.00]: dedicate  7.38% of experiments
+------------------------------------------[Candidate 1994]------------------------------------------
+                             Recommended Effort: 11.61% of experiments
+Time-invariant Controls:
+[ 0.775   1.     35.     12.25    0.0825]
+Sampling Times:
+[      2.00]: dedicate 11.61% of experiments
+------------------------------------------[Candidate 3025]------------------------------------------
+                             Recommended Effort: 11.06% of experiments
+Time-invariant Controls:
+[ 1.   7.   6.  15.   0.1]
+Sampling Times:
+[      0.60]: dedicate 11.06% of experiments
+------------------------------------------[Candidate 3100]------------------------------------------
+                             Recommended Effort: 15.20% of experiments
+Time-invariant Controls:
+[ 1.    7.   27.75 15.    0.1 ]
+Sampling Times:
+[      1.20]: dedicate  9.29% of experiments
+[      1.40]: dedicate  5.91% of experiments
+------------------------------------------[Candidate 3121]------------------------------------------
+                             Recommended Effort: 12.10% of experiments
+Time-invariant Controls:
+[1.0e+00 7.0e+00 3.5e+01 1.5e+01 3.0e-02]
+Sampling Times:
+[      2.00]: dedicate 12.10% of experiments
+------------------------------------------[Candidate 3125]------------------------------------------
+                             Recommended Effort: 13.93% of experiments
+Time-invariant Controls:
+[ 1.   7.  35.  15.   0.1]
+Sampling Times:
+[      2.00]: dedicate 13.93% of experiments
+####################################################################################################
